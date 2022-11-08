@@ -21,9 +21,12 @@ const category_1 = require("./utils/category");
 const hours_1 = require("./utils/hours");
 const app = (0, express_1.default)();
 const client = new mongodb_1.MongoClient(config_1.MONGODB_URI);
-app.use((0, cors_1.default)({
-    origin: config_1.FRONTEND_URL,
-}));
+const corsOptions = {
+    origin: `${config_1.FRONTEND_URL}`,
+    credentials: true,
+    optionSuccessStatus: 200,
+};
+app.use((0, cors_1.default)(corsOptions));
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is working`);
 }));
