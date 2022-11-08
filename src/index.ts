@@ -17,13 +17,17 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.get("/", async (req: any, res: any) => {
   console.log(`Server is working`);
 });
 
 app.get("/mappy/api/places", async (req: any, res: any) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const searchQuery = req.query.search;
   const places: any = await axios.get(
     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
@@ -42,6 +46,10 @@ app.get("/mappy/api/places", async (req: any, res: any) => {
 });
 
 app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const placeID = req.params.placeID;
   const place: any = await axios.get(
     `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`

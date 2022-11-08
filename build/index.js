@@ -16,7 +16,6 @@ const express_1 = __importDefault(require("express"));
 const config_1 = require("./utils/config");
 const mongodb_1 = require("mongodb");
 const axios_1 = __importDefault(require("axios"));
-const cors_1 = __importDefault(require("cors"));
 const category_1 = require("./utils/category");
 const hours_1 = require("./utils/hours");
 const app = (0, express_1.default)();
@@ -26,11 +25,15 @@ const corsOptions = {
     credentials: true,
     optionSuccessStatus: 200,
 };
-app.use((0, cors_1.default)(corsOptions));
+// app.use(cors(corsOptions));
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is working`);
 }));
 app.get("/mappy/api/places", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Headers", "content-type");
+    res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
     const searchQuery = req.query.search;
     const places = yield axios_1.default.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${config_1.GOOGLE_MAPS_API_KEY}`);
     const formattedResults = places.data.results.map((result) => {
@@ -46,6 +49,10 @@ app.get("/mappy/api/places", (req, res) => __awaiter(void 0, void 0, void 0, fun
     res.send(formattedResults);
 }));
 app.get("/mappy/api/place/:placeID", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Headers", "content-type");
+    res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
     const placeID = req.params.placeID;
     const place = yield axios_1.default.get(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${config_1.GOOGLE_MAPS_API_KEY}`);
     const formattedPlace = {
