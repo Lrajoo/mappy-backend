@@ -1,5 +1,5 @@
 import express from "express";
-import { PORT, MONGODB_URI, GOOGLE_MAPS_API_KEY } from "./utils/config";
+import { PORT, MONGODB_URI, GOOGLE_MAPS_API_KEY, FRONTEND_URL } from "./utils/config";
 import { MongoClient } from "mongodb";
 import axios from "axios";
 import cors from "cors";
@@ -11,11 +11,11 @@ import { DetailedPlace } from "./models/detailedPlace";
 const app = express();
 const client = new MongoClient(MONGODB_URI);
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//   })
-// );
+app.use(
+  cors({
+    origin: FRONTEND_URL,
+  })
+);
 
 app.get("/", async (req: any, res: any) => {
   console.log(`Server is working`);

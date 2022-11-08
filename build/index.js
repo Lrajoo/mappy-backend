@@ -16,15 +16,14 @@ const express_1 = __importDefault(require("express"));
 const config_1 = require("./utils/config");
 const mongodb_1 = require("mongodb");
 const axios_1 = __importDefault(require("axios"));
+const cors_1 = __importDefault(require("cors"));
 const category_1 = require("./utils/category");
 const hours_1 = require("./utils/hours");
 const app = (0, express_1.default)();
 const client = new mongodb_1.MongoClient(config_1.MONGODB_URI);
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//   })
-// );
+app.use((0, cors_1.default)({
+    origin: config_1.FRONTEND_URL,
+}));
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is working`);
 }));
