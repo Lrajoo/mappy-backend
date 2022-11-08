@@ -57,8 +57,10 @@ app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
   res.send(formattedPlace);
 });
 
-app.listen(PORT, async () => {
-  console.log(`Server running on port ${PORT}`);
+const port = PORT || 3000;
+
+app.listen(port, async () => {
+  console.log(`Server running on port ${port}`);
 });
 
 module.exports = app;
