@@ -24,6 +24,9 @@ const client = new mongodb_1.MongoClient(config_1.MONGODB_URI);
 app.use((0, cors_1.default)({
     origin: "http://localhost:3000",
 }));
+app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(`Server is working`);
+}));
 app.get("/mappy/api/places", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const searchQuery = req.query.search;
     const places = yield axios_1.default.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${config_1.GOOGLE_MAPS_API_KEY}`);
