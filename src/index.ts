@@ -17,6 +17,10 @@ app.use(
   })
 );
 
+app.get("/", async (req: any, res: any) => {
+  console.log(`Server is working`);
+});
+
 app.get("/mappy/api/places", async (req: any, res: any) => {
   const searchQuery = req.query.search;
   const places: any = await axios.get(
