@@ -11,11 +11,11 @@ import { DetailedPlace } from "./models/detailedPlace";
 const app = express();
 const client = new MongoClient(MONGODB_URI);
 
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//   })
+// );
 
 app.get("/", async (req: any, res: any) => {
   console.log(`Server is working`);
