@@ -21,7 +21,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://main.dgt48bo9ztida.amplifyapp.com",
+    origin: "*",
     // origin: "http://localhost:3000",
   })
 );
@@ -44,7 +44,7 @@ app.use(express.urlencoded());
 app.get("/mappy/api/places", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const searchQuery = req.query.search;
   const searchData = getCity(searchQuery);
@@ -75,7 +75,7 @@ app.get("/mappy/api/places", async (req: any, res: any) => {
 app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const placeID = req.params.placeID;
   const place: any = await axios.get(
@@ -101,7 +101,7 @@ app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
 app.get("/mappy/api/locations", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const locations = await NewYork.find();
   res.send(locations);
@@ -110,7 +110,7 @@ app.get("/mappy/api/locations", async (req: any, res: any) => {
 app.post("/mappy/api/location", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   await NewYork.create({
     userId: req.body.userId,
