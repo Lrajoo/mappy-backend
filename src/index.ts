@@ -21,7 +21,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://main.dgt48bo9ztida.amplifyapp.com/",
+    // origin: "http://localhost:3000",
   })
 );
 app.use(express.json());
