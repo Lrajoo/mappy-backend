@@ -21,7 +21,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://main.dgt48bo9ztida.amplifyapp.com",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
