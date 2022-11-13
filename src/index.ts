@@ -125,7 +125,7 @@ app.post("/mappy/api/location", async (req: any, res: any) => {
 app.delete("/mappy/api/locations/:placeId", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const placeId = req.params.placeId;
   await NewYork.find({ placeId: placeId }).deleteOne();
