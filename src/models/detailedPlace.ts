@@ -5,7 +5,7 @@ export interface DetailedPlace {
   phoneNumber: string;
   description: string;
   name: string;
-  placeID: string;
+  placeId: string;
   priceLevel: number;
   rating: number;
   category: string[];
