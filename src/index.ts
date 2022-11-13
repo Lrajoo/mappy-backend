@@ -19,6 +19,12 @@ connectDB();
 
 const app = express();
 
+const corsOptions = {
+  origin: "https://main.dgt48bo9ztida.amplifyapp.com",
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded());
 
@@ -36,7 +42,7 @@ app.use(express.urlencoded());
 // });
 
 app.get("/mappy/api/places", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://main.dgt48bo9ztida.amplifyapp.com/");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
@@ -67,7 +73,7 @@ app.get("/mappy/api/places", async (req: any, res: any) => {
 });
 
 app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://main.dgt48bo9ztida.amplifyapp.com/");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
@@ -93,7 +99,7 @@ app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
 });
 
 app.get("/mappy/api/locations", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://main.dgt48bo9ztida.amplifyapp.com/");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
@@ -102,7 +108,7 @@ app.get("/mappy/api/locations", async (req: any, res: any) => {
 });
 
 app.post("/mappy/api/location", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://main.dgt48bo9ztida.amplifyapp.com/");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
