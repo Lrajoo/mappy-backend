@@ -19,12 +19,12 @@ connectDB();
 
 const app = express();
 
-const corsOptions = {
-  // origin: "http://localhost:3000",
-  origin: "https://main.dgt48bo9ztida.amplifyapp.com/",
-};
+// const corsOptions = {
+//   // origin: "http://localhost:3000",
+//   origin: "https://main.dgt48bo9ztida.amplifyapp.com/",
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded());
