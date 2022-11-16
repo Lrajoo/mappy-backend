@@ -45,7 +45,7 @@ app.use(express.urlencoded());
 app.get("/mappy/api/places", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   res.setHeader("Content-Type", "application/json");
   const searchQuery = req.query.search;
@@ -77,7 +77,7 @@ app.get("/mappy/api/places", async (req: any, res: any) => {
 app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   res.setHeader("Content-Type", "application/json");
   const placeID = req.params.placeID;
@@ -104,7 +104,7 @@ app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
 app.get("/mappy/api/locations", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   res.setHeader("Content-Type", "application/json");
   const locations = await NewYork.find();
@@ -114,7 +114,7 @@ app.get("/mappy/api/locations", async (req: any, res: any) => {
 app.post("/mappy/api/location", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   res.setHeader("Content-Type", "application/json");
   await NewYork.create({
@@ -130,11 +130,11 @@ app.post("/mappy/api/location", async (req: any, res: any) => {
 app.delete("/mappy/api/locations/:placeId", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   res.setHeader("Content-Type", "application/json");
   const placeId = req.params.placeId;
-  await NewYork.find({ placeId: placeId }).deleteOne();
+  await NewYork.findOne({ placeId: placeId }).deleteOne();
   res.status(201).json({ Success: "Location removed!" });
 });
 
