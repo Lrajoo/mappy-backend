@@ -19,12 +19,12 @@ connectDB();
 
 const app = express();
 
-// const corsOptions = {
-//   // origin: "http://localhost:3000",
-//   origin: "https://main.dgt48bo9ztida.amplifyapp.com/",
-// };
+const corsOptions = {
+  // origin: "http://localhost:3000",
+  origin: "https://main.dgt48bo9ztida.amplifyapp.com/",
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -79,7 +79,7 @@ app.get("/mappy/api/place/:placeID", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  res.setHeader("Content-Type", "application/json");
+  // res.setHeader("Content-Type", "application/json");
   const placeID = req.params.placeID;
   const place: any = await axios.get(
     `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`
@@ -106,7 +106,7 @@ app.get("/mappy/api/locations", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  res.setHeader("Content-Type", "application/json");
+  // res.setHeader("Content-Type", "application/json");
   const locations = await NewYork.find();
   res.send(locations);
 });
@@ -116,7 +116,7 @@ app.post("/mappy/api/location", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  res.setHeader("Content-Type", "application/json");
+  // res.setHeader("Content-Type", "application/json");
   await NewYork.create({
     userId: req.body.userId,
     placeId: req.body.placeId,
@@ -132,7 +132,7 @@ app.delete("/mappy/api/locations/:placeId", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  res.setHeader("Content-Type", "application/json");
+  // res.setHeader("Content-Type", "application/json");
   const placeId = req.params.placeId;
   await NewYork.findOne({ placeId: placeId }).deleteOne();
   res.status(201).json({ Success: "Location removed!" });
