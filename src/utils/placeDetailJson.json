@@ -1,0 +1,446 @@
+{
+    "data": {
+    "html_attributions": [],
+    "result": {
+        "address_components": [
+            {
+                "long_name": "888",
+                "short_name": "888",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "8th Avenue",
+                "short_name": "8th Ave",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Manhattan",
+                "short_name": "Manhattan",
+                "types": [
+                    "sublocality_level_1",
+                    "sublocality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "New York",
+                "short_name": "New York",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "New York County",
+                "short_name": "New York County",
+                "types": [
+                    "administrative_area_level_2",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "New York",
+                "short_name": "NY",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "United States",
+                "short_name": "US",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "10019",
+                "short_name": "10019",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">888 8th Ave</span>, <span class=\"locality\">New York</span>, <span class=\"region\">NY</span> <span class=\"postal-code\">10019</span>, <span class=\"country-name\">USA</span>",
+        "business_status": "OPERATIONAL",
+        "current_opening_hours": {
+            "open_now": true,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2022-11-20",
+                        "day": 0,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-20",
+                        "day": 0,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2022-11-21",
+                        "day": 1,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-21",
+                        "day": 1,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2022-11-22",
+                        "day": 2,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-22",
+                        "day": 2,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2022-11-23",
+                        "day": 3,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-23",
+                        "day": 3,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2022-11-24",
+                        "day": 4,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-24",
+                        "day": 4,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2022-11-25",
+                        "day": 5,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-25",
+                        "day": 5,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2022-11-19",
+                        "day": 6,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2022-11-19",
+                        "day": 6,
+                        "time": "0700"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 7:00 AM – 7:00 PM",
+                "Tuesday: 7:00 AM – 7:00 PM",
+                "Wednesday: 7:00 AM – 7:00 PM",
+                "Thursday: 7:00 AM – 7:00 PM",
+                "Friday: 7:00 AM – 7:00 PM",
+                "Saturday: 7:00 AM – 7:00 PM",
+                "Sunday: 7:00 AM – 7:00 PM"
+            ]
+        },
+        "delivery": true,
+        "dine_in": true,
+        "formatted_address": "888 8th Ave, New York, NY 10019, USA",
+        "formatted_phone_number": "(917) 409-0147",
+        "geometry": {
+            "location": {
+                "lat": 40.7638666,
+                "lng": -73.9847094
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 40.7652548802915,
+                    "lng": -73.98345956970849
+                },
+                "southwest": {
+                    "lat": 40.76255691970851,
+                    "lng": -73.98615753029151
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "international_phone_number": "+1 917-409-0147",
+        "name": "Ground Central Coffee Company",
+        "opening_hours": {
+            "open_now": true,
+            "periods": [
+                {
+                    "close": {
+                        "day": 0,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 0,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 1,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 1,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 2,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 2,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 3,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 3,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 4,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 4,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "0700"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 7:00 AM – 7:00 PM",
+                "Tuesday: 7:00 AM – 7:00 PM",
+                "Wednesday: 7:00 AM – 7:00 PM",
+                "Thursday: 7:00 AM – 7:00 PM",
+                "Friday: 7:00 AM – 7:00 PM",
+                "Saturday: 7:00 AM – 7:00 PM",
+                "Sunday: 7:00 AM – 7:00 PM"
+            ]
+        },
+        "photos": [
+            {
+                "height": 5304,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/118438478368497376526\">Ground Central Coffee Company</a>"
+                ],
+                "photo_reference": "AW30NDw0bfLTk1GYn_jF_IotsD7uLfCyYPYQj93KNEArqiygAg3fiQGj50FoTAGow9JIfHOG9eKSS7mzAurrBCE87NbRjdp33aCXySs_0305E7tx-b0XThuIavArcuZSK6pND9vBlmR6nxqydpN2YT55ztJ4m216E5_wFUqRBqA0c7Aw1PW8",
+                "width": 7952
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108089679782496574157\">Kwynn Hogan</a>"
+                ],
+                "photo_reference": "AW30NDwF10Lm4kiJ0OAhliCLXc6HgcccpVkI3ZTkCj8gI6yFOP-fYZ6ZylxQ86WpVjANZmqPAbhiWskq2VK7Gi_GXg2pPA3YlnMaNy9ieak5cMKGK72F4DggRMy2ziayHLhfVjd-FZ3g3OqxQ5iSOol7hLsU3bB7h98y_vi2MvY0T0OmPpsb",
+                "width": 3024
+            },
+            {
+                "height": 5304,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/118438478368497376526\">Ground Central Coffee Company</a>"
+                ],
+                "photo_reference": "AW30NDzeviGUPtOX3gFhF_UrQIs6S0j47jh_SMUPqG75LBU4IYlF715auDBKEDeHCrs2O79c-0tbL5hj-k5jLE3BGwkHw6sy1pl9yo-9jr-lx1Ta2Ev0fUtVp-ohrEZeiq_FE20oJLC0419o8PQfs26FSa68zY7BecxqtxJgcynOmfWMbqZy",
+                "width": 7952
+            },
+            {
+                "height": 3542,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/118438478368497376526\">Ground Central Coffee Company</a>"
+                ],
+                "photo_reference": "AW30NDyRigKbDusAfeqPgZjfw84Cl50hjrC21q8QMy1kYClTXqsQgCSIWYYSOYRU2GB8zhRr8gUjRz4C_Kq2KucZ6xngdhG9RM0N6rlF8-rGNcCPbxJA_m1gTm5LSpcgeEk7kXhuYKux1Qg7Uj4iEawkIsZqV-CV7l5FjGV9z4V160O6moU0",
+                "width": 5313
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115389797224346859768\">Martin Keyler</a>"
+                ],
+                "photo_reference": "AW30NDykcOKngoqzDvi3xaIBRnQM0hNi_Vs2Eb4uHBp0yfueHo7d1jxe6X2xVH_lfXyRs11eo8-151uheqpWyXaRpy6ttHwIU9vdTnDM-TFwhbV9ixjiFkacZLWQbNtCAF_C5Ru7JZdGVqugCii0ftzATe4cHxK1hu0pvvCg0SKTiz2yN8Zx",
+                "width": 4032
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116698586112492978958\">Mahitha Kotipalli</a>"
+                ],
+                "photo_reference": "AW30NDyWMQb9MSekyPBQUjHRBpxaw6HzgZp3t46Hzpldz0SqUSFc6c0oTzo7a43ZO0Exg-BjdJodJ-kCQ5XOqdv5vPRvGuBHmEuw5nxReBwzD3AZ-nSBi9iCyMtlzyVTE7UjUUPtHt-ldsOataLRlyEG3d-msJ56HW_7ZUIaJ4rrxsm6dpRa",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115546656262341592125\">Emma V</a>"
+                ],
+                "photo_reference": "AW30NDxEt1FzSwiHizYSnK_Zn87b4W5lq05E6TFd26cKGggkPjpL0pBXBpajT18fwiwwVQn5PVWFl08hc7pdXIbWod7uH0awcpsz5j50-1rHXqg0vbh_50Qpvmo5WUrXjCiAoPCoSe51xLPHi7kOFY3cepbNdl6hBdDJJkCD96plFzVFm9mg",
+                "width": 3024
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113196825881884185589\">Nathaniel Downes</a>"
+                ],
+                "photo_reference": "AW30NDzulXmfKPgjdv4o5x_NOpta3MQlJmTEisP3yPXAIKWwtkV3I2gkzMC7sOwsELRhmVtDniR3ruLvL80OvMExWC2_cBZLMOLE3fjb5cANOGOGGlikg_HgzWXrNReZLIUcRzuK66xQrLGSIhwT5ZctPIvT7v8dTT1MR63fALwf6VwvAns1",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103826347298148847229\">Henry Katz</a>"
+                ],
+                "photo_reference": "AW30NDwWintFtfwIy2q-Ud7CaAkf_FXjpYAuTzWWBYbcYNp4oGzUm5BiIMV0DWYg4SFr3t3mxF1GShGHzUU7VoVFPa3vL_JqmVWlFxADJymM_Z0I3lF63pF0XbfA4wtLf7k2oVbKbw3PM34y6MrD0hk2vxz0Kk9t7I_lf3QBbdAeqaIaRPRm",
+                "width": 4032
+            },
+            {
+                "height": 2048,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110868603367525416287\">Hsin Yi Wei</a>"
+                ],
+                "photo_reference": "AW30NDwKqA7h-gtjhMwi_kX8xLllNG8fGjSPQksCRAgt0_PiBzsG4Q5vAP4t6Tf4BrjaEECpDbnClvmBHx_UrXL8Ofwk89es0_6yLEFVSGmm59fD_fJ6bqMrAV003AzA-G6POVl5yZahjiXvv6tKTlN89kie65hNIEZp61-GRpJHEBR10_JX",
+                "width": 1536
+            }
+        ],
+        "place_id": "ChIJ1X3dvldYwokRyajPtakhQLk",
+        "plus_code": {
+            "compound_code": "Q278+G4 New York, NY, USA",
+            "global_code": "87G8Q278+G4"
+        },
+        "price_level": 2,
+        "rating": 4.5,
+        "reference": "ChIJ1X3dvldYwokRyajPtakhQLk",
+        "reviews": [
+            {
+                "author_name": "Nathaniel Downes",
+                "author_url": "https://www.google.com/maps/contrib/113196825881884185589/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ACNPEu-ANdQSQ8S8ACON4zO8Xs_mIQmRj7Hswpn3wHOjig=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "6 months ago",
+                "text": "Cute place with good coffee in nyc. It’s a chain coffee shop but is still really good coffee. They have tons of inside seating and a bunch of menu options. One of my favorite coffee spots in the city and has great flavor and portions for the price.",
+                "time": 1652209970,
+                "translated": false
+            },
+            {
+                "author_name": "Inés Gómez",
+                "author_url": "https://www.google.com/maps/contrib/117140410580060875077/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ACNPEu8Lboo0328sHEMZWX290hXKJco6862bUBivgWbIGQ=s128-c0x00000000-cc-rp-mo-ba3",
+                "rating": 5,
+                "relative_time_description": "3 months ago",
+                "text": "Cool little place in nyc with good coffee. I usually grab an oat milk latte on the go. They also have very nice gluten free pastries.\n\nIt has a great atmosphere with good music. You can seat to work as it has free wifi and space to be on your laptop. It’s also nice to seat on the couches for a coffee with friends.\n\nBaristas are very nice and provide good fast service!",
+                "time": 1661102177,
+                "translated": false
+            },
+            {
+                "author_name": "Elizabeth Tam",
+                "author_url": "https://www.google.com/maps/contrib/109213508069395321210/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ACNPEu9fjikp5QGdeNJcXHoq7_c5qPj9vlgWiWPYoVrzsw=s128-c0x00000000-cc-rp-mo-ba6",
+                "rating": 5,
+                "relative_time_description": "6 months ago",
+                "text": "Cute coffee shop in Hells Kitchen. They have a ton of different variations of your classic drinks and delicious pastries. My favorite drink so far is the coconut lavender matcha latte!",
+                "time": 1653008377,
+                "translated": false
+            },
+            {
+                "author_name": "Ido Simyoni",
+                "author_url": "https://www.google.com/maps/contrib/109178936832129224577/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ACNPEu9kTW80K5DLB_Z_gWhKqDFvLLh9AqNk-Wx73PDIdA=s128-c0x00000000-cc-rp-mo-ba6",
+                "rating": 4,
+                "relative_time_description": "a year ago",
+                "text": "What I like the most about this coffeeshop (Ground Central coffee) is their lounge / couches area. It’s nice for meetings of just to chill with coffee and friends . Others are just working with their laptops.\nThey have gluten free pastries and milk alternative for coffees (I got my oat milk latte). The coffee grind they use is not my favorite but it’s not bad at all so I don’t mind it much. They also have some bottled cold press juices (rockin beet is my favorite).",
+                "time": 1631194529,
+                "translated": false
+            },
+            {
+                "author_name": "Shaun Correa",
+                "author_url": "https://www.google.com/maps/contrib/100516004235375204250/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ACNPEu-XEM923NRqriRKDkZBSGDk38_xLPlLkB1QsRpRYg=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "7 months ago",
+                "text": "I visit this coffee shop every time I am in Manhattan. Been going for years, so surprised it has taken me this long to leave a review. They have very good coffee. I usually get the standard latte but, at my most recent visit, they had a lavender oat latte. It was delicious! Had the great regular oat latte flavour, but with the flowery hit of lavender. Terrific combo! Aside from the good coffee, the ambiance and service is really great too.",
+                "time": 1650676986,
+                "translated": false
+            }
+        ],
+        "takeout": true,
+        "types": [
+            "book_store",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=13348706308309625033",
+        "user_ratings_total": 704,
+        "utc_offset": -300,
+        "vicinity": "888 8th Avenue, New York",
+        "website": "http://www.groundcentral.com/"
+    },
+    "status": "OK"
+}}

@@ -1,0 +1,59 @@
+{
+    "data": {
+    "html_attributions": [],
+    "results": [
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "25 E 20th St, New York, NY 10003, United States",
+            "geometry": {
+                "location": {
+                    "lat": 40.7391338,
+                    "lng": -73.9890961
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.74038662989273,
+                        "lng": -73.98781842010727
+                    },
+                    "southwest": {
+                        "lat": 40.73768697010728,
+                        "lng": -73.99051807989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+            "name": "Devoción",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3207,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103842811218248321695\">A Google User</a>"
+                    ],
+                    "photo_reference": "AW30NDz05B74BGmuL6uIqEBHpUO9_K67CU_IHp6UwTghLnvBKcd2QQJj_Nb-Du7RIoDkTokg5hoknoBK9B_v3VmaQYqx17Y56P8EztKGOkuMZvGg2lO8qZCsvpsF4L8Jh-GMYMpBuJlKQvRtTd3kjU9CKX47JWB9jNBziB5M2qeQK0ZBH1Yz",
+                    "width": 4804
+                }
+            ],
+            "place_id": "ChIJH1KZKilZwokRYwSxtHI3_N0",
+            "plus_code": {
+                "compound_code": "P2Q6+J9 New York",
+                "global_code": "87G8P2Q6+J9"
+            },
+            "rating": 4.5,
+            "reference": "ChIJH1KZKilZwokRYwSxtHI3_N0",
+            "types": [
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 472
+        }
+    ],
+    "status": "OK"
+}}
