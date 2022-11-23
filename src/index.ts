@@ -32,8 +32,8 @@ const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 const app = express();
 
 const corsOptions = {
-  // origin: "http://localhost:3000",
-  origin: "https://main.dgt48bo9ztida.amplifyapp.com",
+  origin: "http://localhost:3000",
+  // origin: "https://main.dgt48bo9ztida.amplifyapp.com",
 };
 
 app.use(cors(corsOptions));
@@ -65,11 +65,22 @@ app.post("/mappy/api/verify", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const phoneNumber = `+1${req.body.phoneNumber}`;
+  const user = await User.findOne({ phoneNumber: req.body.phoneNumber });
+
   client.verify.v2
     .services("VA1b5e842174979ebb0f38dfee533fb26b")
     .verificationChecks.create({ to: phoneNumber, code: req.body.verificationCode })
     .then((verification_check: any) => {
-      if (verification_check.status == "approved") res.status(201).json({ status: verification_check.status });
+      if (verification_check.status == "approved" && user)
+        res.status(201).json({
+          loginStatus: verification_check.status === "approved" ? true : false,
+          userId: user.userId,
+          firstName: user.firstName,
+          userName: user.userName,
+          lastName: user.lastName,
+          homeCity: user.homeCity,
+          homeState: user.homeState,
+        });
     });
 });
 
@@ -88,6 +99,8 @@ app.post("/mappy/api/users", async (req: any, res: any) => {
       userId: uuidv4(),
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      userName: req.body.userName,
+      dateOfBirth: req.body.dateOfBirth,
       phoneNumber: req.body.phoneNumber,
       email: req.body.email,
       homeCity: homeCity,
