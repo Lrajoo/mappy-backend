@@ -32,10 +32,8 @@ const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
-  // origin: "https://main.dgt48bo9ztida.amplifyapp.com",
+  origin: ENV === "dev" ? "http://localhost:3000" : "https://main.dgt48bo9ztida.amplifyapp.com",
 };
-
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded());
