@@ -1,14 +1,5 @@
 import express from "express";
-import {
-  PORT,
-  MONGODB_URI,
-  GOOGLE_MAPS_API_KEY,
-  FRONTEND_URL,
-  ENV,
-  TWILIO_ACCOUNT_SID,
-  TWILIO_AUTH_TOKEN,
-} from "./utils/config";
-import { MongoClient } from "mongodb";
+import { PORT, GOOGLE_MAPS_API_KEY, ENV, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } from "./utils/config";
 import axios from "axios";
 import cors from "cors";
 import { getCategory } from "./utils/category";
@@ -17,97 +8,29 @@ import { Place } from "./models/place";
 import { DetailedPlace } from "./models/detailedPlace";
 import { connectDB } from "./utils/dbConnection";
 import mongoose from "mongoose";
-import User from "./models/User";
 import Search from "./models/Search";
 import NewYork from "./models/NewYork";
 import { getCity } from "./utils/city";
-import { v4 as uuidv4 } from "uuid";
 import * as placesJson from "./utils/placesJson.json";
 import * as placesDetailJson from "./utils/placeDetailJson.json";
+import loginRoutes from "./routes/login";
+import verifyRoutes from "./routes/verify";
+import usersRoutes from "./routes/users";
 
 connectDB();
-
-const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
 const app = express();
 
 const corsOptions = {
   origin: ENV === "dev" ? "http://localhost:3000" : "https://main.dgt48bo9ztida.amplifyapp.com",
 };
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded());
-
-app.post("/mappy/api/login", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
-  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  const userExists = await User.findOne({ phoneNumber: req.body.phoneNumber });
-  const phoneNumber = `+1${req.body.phoneNumber}`;
-  if (userExists === null) {
-    res.status(400).json({ Failure: "No account associated with this phone number." });
-  } else {
-    client.verify.v2
-      .services("VA1b5e842174979ebb0f38dfee533fb26b")
-      .verifications.create({ to: phoneNumber, channel: "sms" })
-      .then((verification: any) => {
-        res.status(201).json({ status: verification.status });
-      });
-  }
-});
-
-app.post("/mappy/api/verify", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
-  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  const phoneNumber = `+1${req.body.phoneNumber}`;
-  const user = await User.findOne({ phoneNumber: req.body.phoneNumber });
-
-  client.verify.v2
-    .services("VA1b5e842174979ebb0f38dfee533fb26b")
-    .verificationChecks.create({ to: phoneNumber, code: req.body.verificationCode })
-    .then((verification_check: any) => {
-      if (verification_check.status == "approved" && user)
-        res.status(201).json({
-          loginStatus: verification_check.status === "approved" ? true : false,
-          userId: user.userId,
-          firstName: user.firstName,
-          userName: user.userName,
-          lastName: user.lastName,
-          homeCity: user.homeCity,
-          homeState: user.homeState,
-        });
-    });
-});
-
-app.post("/mappy/api/users", async (req: any, res: any) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
-  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
-  const homeCity = req.body.homeCity.split(",")[0];
-  const homeState = req.body.homeCity.split(",")[1];
-  const userExists = await User.findOne({ phoneNumber: req.body.phoneNumber });
-  if (userExists !== null) {
-    res.status(400).json({ Failure: "Account already created with this phone number" });
-  } else {
-    const result = await User.create({
-      userId: uuidv4(),
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      userName: req.body.userName,
-      dateOfBirth: req.body.dateOfBirth,
-      phoneNumber: req.body.phoneNumber,
-      email: req.body.email,
-      homeCity: homeCity,
-      homeState: homeState,
-      friends: [],
-    });
-    res.status(201).json({ success: "Signed Up!" });
-  }
-});
+app.use("/mappy/api/login", loginRoutes);
+app.use("/mappy/api/verify", verifyRoutes);
+app.use("/mappy/api/users", usersRoutes);
 
 app.get("/mappy/api/places", async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
