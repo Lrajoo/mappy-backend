@@ -22,15 +22,12 @@ const places = async (req: any, res: any) => {
     state: searchData.state,
     timestamp: new Date(),
   });
-  // const places: any =
-  //   ENV === "dev"
-  //     ? placesJson
-  //     : await axios.get(
-  //         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
-  //       );
-  const places: any = await axios.get(
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
-  );
+  const places: any =
+    ENV === "dev"
+      ? placesJson
+      : await axios.get(
+          `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
+        );
   const formattedResults: Place[] = places.data.results.map((result: any) => {
     return {
       address: result.formatted_address,

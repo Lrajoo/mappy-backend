@@ -21,6 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded());
+
 app.use("/mappy/api/login", loginRoutes);
 app.use("/mappy/api/verify", verifyRoutes);
 app.use("/mappy/api/users", usersRoutes);

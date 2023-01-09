@@ -1,6 +1,3 @@
-import User from "../models/User";
-import { getCity } from "../utils/city";
-import { Place } from "../models/place";
 import axios from "axios";
 import * as placesDetailJson from "../utils/placeDetailJson.json";
 import { getCategory } from "../utils/category";
@@ -15,15 +12,12 @@ const place = async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   // res.setHeader("Content-Type", "application/json");
   const placeID = req.params.placeID;
-  // const place: any =
-  //   ENV === "dev"
-  //     ? placesDetailJson
-  //     : await axios.get(
-  //         `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`
-  //       );
-  const place: any = await axios.get(
-    `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`
-  );
+  const place: any =
+    ENV === "dev"
+      ? placesDetailJson
+      : await axios.get(
+          `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`
+        );
   const formattedPlace: DetailedPlace = {
     address: place.data.result.formatted_address,
     phoneNumber: place.data.result?.formatted_phone_number,

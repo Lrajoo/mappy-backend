@@ -10,12 +10,16 @@ const verify = async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   const phoneNumber = `+1${req.body.phoneNumber}`;
   const user = await User.findOne({ phoneNumber: req.body.phoneNumber });
-
   client.verify.v2
-    .services("VA1b5e842174979ebb0f38dfee533fb26b")
+    .services("VA7e0cd81a1ff24f1b1c2fddb5c3b120a7")
     .verificationChecks.create({ to: phoneNumber, code: req.body.verificationCode })
     .then((verification_check: any) => {
-      if (verification_check.status == "approved" && user)
+      if (verification_check.status == "pending") {
+        res.status(401).json({
+          loginStatus: false,
+        });
+      }
+      if (verification_check.status == "approved" && user) {
         res.status(201).json({
           loginStatus: verification_check.status === "approved" ? true : false,
           userId: user.userId,
@@ -25,6 +29,7 @@ const verify = async (req: any, res: any) => {
           homeCity: user.homeCity,
           homeState: user.homeState,
         });
+      }
     });
 };
 

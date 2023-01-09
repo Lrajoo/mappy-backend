@@ -14,7 +14,7 @@ const login = async (req: any, res: any) => {
     res.status(400).json({ Failure: "No account associated with this phone number." });
   } else {
     client.verify.v2
-      .services("VA1b5e842174979ebb0f38dfee533fb26b")
+      .services("VA7e0cd81a1ff24f1b1c2fddb5c3b120a7")
       .verifications.create({ to: phoneNumber, channel: "sms" })
       .then((verification: any) => {
         res.status(201).json({ status: verification.status });
