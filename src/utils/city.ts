@@ -9,5 +9,10 @@ export const getCity = (searchQuery: string) => {
     result.state = "New York".toLowerCase();
     result.query = searchQuery.replace("New York City", "").trim().toLowerCase();
   }
+  if (searchQuery.includes("San Francisco")) {
+    result.city = "San Francisco".toLowerCase();
+    result.state = "California".toLowerCase();
+    result.query = searchQuery.replace("San Francisco", "").trim().toLowerCase();
+  }
   return result;
 };

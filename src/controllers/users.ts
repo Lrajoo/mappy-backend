@@ -1,8 +1,7 @@
 import User from "../models/User";
-import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } from "../utils/config";
 import { v4 as uuidv4 } from "uuid";
 
-const users = async (req: any, res: any) => {
+export const createNewUser = async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
@@ -40,4 +39,12 @@ const users = async (req: any, res: any) => {
   }
 };
 
-export default users;
+export const getUser = async (req: any, res: any) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
+  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
+  const userName = req.params.userName;
+  const userProfile = await User.findOne({ userName: userName });
+  res.status(200).send(userProfile);
+};

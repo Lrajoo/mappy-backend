@@ -15,19 +15,24 @@ const places = async (req: any, res: any) => {
   res.setHeader("Content-Type", "application/json");
   const searchQuery = req.query.search;
   const searchData = getCity(searchQuery);
-  await Search.create({
-    userId: "f2cada03-140f-41ad-84eb-1ee7560ad516",
-    query: searchData.query,
-    city: searchData.city,
-    state: searchData.state,
-    timestamp: new Date(),
-  });
-  const places: any =
-    ENV === "dev"
-      ? placesJson
-      : await axios.get(
-          `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
-        );
+  //update user ID for search
+  // await Search.create({
+  //   userId: "f2cada03-140f-41ad-84eb-1ee7560ad516",
+  //   query: searchData.query,
+  //   city: searchData.city,
+  //   state: searchData.state,
+  //   timestamp: new Date(),
+  // });
+  // const places: any =
+  //   ENV === "dev"
+  //     ? placesJson
+  //     : await axios.get(
+  //         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
+  //       );
+  const places: any = await axios.get(
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${GOOGLE_MAPS_API_KEY}`
+  );
+
   const formattedResults: Place[] = places.data.results.map((result: any) => {
     return {
       address: result.formatted_address,

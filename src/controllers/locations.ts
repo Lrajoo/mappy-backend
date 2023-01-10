@@ -1,4 +1,10 @@
 import NewYork from "../models/NewYork";
+import SanFrancisco from "../models/SanFrancisco";
+
+const cityTable: any = {
+  "New York City": NewYork,
+  "San Francisco": SanFrancisco,
+};
 
 export const getLocations = async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -6,7 +12,11 @@ export const getLocations = async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   // res.setHeader("Content-Type", "application/json");
-  const locations = await NewYork.find();
+  const city = req.query.city;
+  const userId = req.query.userId;
+  const locations = await cityTable[city].find({
+    userId: userId,
+  });
   res.send(locations);
 };
 
@@ -16,7 +26,7 @@ export const postLocations = async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
   // res.setHeader("Content-Type", "application/json");
-  await NewYork.create({
+  await cityTable[req.body.city].create({
     userId: req.body.userId,
     placeId: req.body.placeId,
     timestamp: new Date(),
