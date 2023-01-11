@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-  origin: ENV === "dev" ? "http://localhost:3000" : "https://main.dgt48bo9ztida.amplifyapp.com",
+  origin: ENV === "dev" ? "http://localhost:3000" : "https://www.mappyapp.dev",
 };
 
 app.use(cors(corsOptions));
