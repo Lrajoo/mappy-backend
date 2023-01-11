@@ -1,6 +1,6 @@
 import User from "../models/User";
 import { getCity } from "../utils/city";
-import { Place } from "../models/place";
+import { Place } from "../interface/place";
 import axios from "axios";
 import Search from "../models/Search";
 import * as placesJson from "../utils/placesJson.json";

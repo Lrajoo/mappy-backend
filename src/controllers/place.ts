@@ -2,7 +2,7 @@ import axios from "axios";
 import * as placesDetailJson from "../utils/placeDetailJson.json";
 import { getCategory } from "../utils/category";
 import { ENV, GOOGLE_MAPS_API_KEY } from "../utils/config";
-import { DetailedPlace } from "../models/detailedPlace";
+import { DetailedPlace } from "../interface/detailedPlace";
 import { formatOpeningHours } from "../utils/hours";
 
 const place = async (req: any, res: any) => {

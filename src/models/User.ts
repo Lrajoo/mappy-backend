@@ -40,7 +40,7 @@ const userSchema = new Schema({
     required: true,
   },
   friends: {
-    type: [String],
+    type: [Schema.Types.Mixed],
     required: true,
   },
 });
